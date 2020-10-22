@@ -7,7 +7,7 @@ class Audio extends Component {
     }
     componentDidMount() {
         let id = this.props.match.params.post_id;
-        axios.get('http://localhost:8000/api/song/' + id)
+        axios.get('http://localhost:8000/api/song/' + id+'/')
             .then(res => {
                this.setState({
                    song: res.data

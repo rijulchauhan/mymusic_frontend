@@ -10,7 +10,7 @@ class Artist extends Component {
     }
     componentDidMount() {
         let id=this.props.match.params.post_id;
-        axios.get('http://localhost:8000/api/artist/'+id)
+        axios.get('http://localhost:8000/api/artist/'+id+'/')
             .then(res => {
                 console.log(res.data)
                 
