@@ -1,0 +1,125 @@
+body{
+    margin:0;
+    font-family:'Raleway';
+}
+
+.radio blockquote{
+    position: absolute;
+    z-index: 1;
+    font-size: 25px;
+    color:white;
+}
+
+.radio img{
+    position: absolute;
+
+}
+.radio img:nth-of-type(1){
+    left:0;
+    animation:move-out 3s ease-in-out 3s forwards;
+}
+.radio img:nth-of-type(2){
+    right:-100%;
+    animation:move-in 3s ease-in-out 3s forwards,
+    move-out 3s ease-in-out 9s forwards;
+}
+.radio img:nth-of-type(3){
+    right:-100%;
+    animation:move-in 3s ease-in-out 9s forwards;
+}
+@keyframes move-in{
+    from{
+        right:-100%;
+    }
+    to{
+        right:0;
+    }
+}
+@keyframes move-out{
+    from{
+        left:0;
+    }
+    to{
+        left:-100%;
+    }
+}
+.radio{
+    position: relative;
+    height: 603px;
+    overflow: hidden;
+}
+.radio{
+    padding:0 !important;
+}
+
+.text{
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 2em;
+    margin:0;
+}
+.item img{
+    border-radius:60%;
+}
+
+.item{
+    margin:50px;
+    text-align:center;
+    font-size:24px;
+}
+
+.player{
+    margin-top:100px;
+}
+.content .title{
+    font-size: 32px;
+}
+.content{
+    font-size: 20px;
+}
+.content .story{
+    font-size: 16px;
+}
+.records{
+    margin-top:100px;
+}
+.list li{
+    font-size: 18px;
+    line-height: 50px;
+    border-bottom:1px solid crimson ;
+}
+.control audio{
+    display: block;
+    width:100%;
+}
+.fake{
+    background-color: black;
+    height:10px;
+}
+.title{
+    font-weight: 600;
+}
+.brand-logo{
+    margin-left:5% ;       
+}
+.admin{
+    margin-top: 100px;
+}
+.admin .plus{
+    width:50%;
+    margin:50px auto;
+    transition: transform 0.1s;
+}
+.plus img:hover{
+    transform: scale(1.05,1.05);
+}
+.addsong{
+    margin-top: 100px;
+}
+.addsong button{
+    border: 0;
+}
+
+nav{
+    background-color: #14274e;
+}
