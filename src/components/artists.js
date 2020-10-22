@@ -7,7 +7,7 @@ class Artists extends Component{
         artists: []
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/api/artists/')
+        axios.get('http://65.0.148.24:8000/api/artists')
             .then(res => {
                 this.setState({
                     artists: res.data

@@ -10,7 +10,7 @@ class Album extends Component {
     }
     componentDidMount() {
         let id=this.props.match.params.post_id;
-        axios.get('http://localhost:8000/api/album/'+id+'/')
+        axios.get('http://65.0.148.24:8000/api/album/'+id)
             .then(res => {
                 console.log(res.data)
                 

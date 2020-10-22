@@ -7,7 +7,7 @@ class Album extends Component{
         Album: []
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/api/albums/')
+        axios.get('http://65.0.148.24:8000/api/albums')
             .then(res => {
                 this.setState({
                     Album: res.data

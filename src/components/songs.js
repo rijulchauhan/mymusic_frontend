@@ -7,7 +7,7 @@ class Songs extends Component {
         songs: []
     }
     componentDidMount() {
-        axios.get('http://localhost:8000/api/songs')
+        axios.get('http://65.0.148.24:8000/api/songs/')
             .then(res => {
                 console.log(res)
                 this.setState({
@@ -24,7 +24,7 @@ class Songs extends Component {
                     <div className="col s12 m4 l4" key={item.pk}>
                         <div className="card">
                             <div className="card-image">
-                                <img src={"http://localhost:8000" + item.fields.img_url} width="200px" height="300px" />   
+                                <img src={"http://65.0.148.24:8000" + item.fields.img_url} width="200px" height="300px" />   
                             </div>
                             <div className="card-content">
                             <span className="card-title">{item.fields.title}</span>{/* <span>{item.artist}</span> */}
