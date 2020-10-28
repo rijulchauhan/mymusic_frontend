@@ -9,24 +9,28 @@ import Artist from './components/Artist'
 import Album from './components/Album'
 import AddSong from './components/AddSong'
 import Admin from './components/admin' 
+import Player from './components/player'
+import Login from './components/Auth/Login'
 import {BrowserRouter, Route} from 'react-router-dom'
 
 function App() {
   return (
+    <div>
     <BrowserRouter>
-      <div className="App">
         <Navbar/>
         <Route exact path="/" component={Home} />
         <Route exact path="/Songs" component={Songs}/>
         <Route path="/Albums" component={Albums}/>
         <Route path="/Artists" component={Artists}/>
-        <Route exact path="/Play/:post_id" component={Audio}/>
-        <Route exact path="/Artist/:post_id" component={Artist}/>
-        <Route exact path="/Album/:post_id" component={Album}/>
+        <Route exact path="/Play/:get_id" component={Audio}/>
+        <Route exact path="/Artist/:get_id" component={Artist}/>
+        <Route exact path="/Album/:get_id" component={Album}/>
         <Route exact path="/Admin/AddSong" component={AddSong}/>
         <Route exact path="/Admin" component={Admin}/>
-    </div>
+        <Route exact path="/Login" component={Login} />
     </BrowserRouter>
+    <Player/>
+    </div>
   );
 }
 

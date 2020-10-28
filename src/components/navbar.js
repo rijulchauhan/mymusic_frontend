@@ -1,14 +1,14 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 function Navbar() {
     return (
         <nav>
             <div className="nav-wrapper">
-                <a href="/" className="brand-logo hide-on-small-only">My Music</a>
+                <Link to="/" className="brand-logo hide-on-small-only">My Music</Link>
                 <ul id="nav-mobile" className="right">
-                    <li><a href="/Songs">Songs</a></li>
-                    <li><a href="/Artists">Artists</a></li>
-                    <li><a href="/Albums">Albums</a></li>
+                    <li><Link to="/Songs">Songs</Link></li>
+                    <li><Link to="/Artists">Artists</Link></li>
+                    <li><Link to="/Albums">Albums</Link></li>
                 </ul>
             </div>
         </nav>

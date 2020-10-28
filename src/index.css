@@ -123,3 +123,92 @@ body{
 nav{
     background-color: #14274e;
 }
+
+.player{
+    color:white;
+    position: fixed;
+    height:100px;
+    bottom: 0;
+    background-color: #14274e;
+    z-index: 1;
+    width:100%;
+    display: flex;
+    align-items:center;
+    margin:0;
+}
+.player-icon{
+    padding:0 !important;
+    margin-left: 0 !important;
+    position: relative;
+    top:3px;
+}
+.detail{
+    padding-left: 20px !important;
+}
+.player-controls{
+    display: inline-block;
+    width:50%;
+    padding-top: 20px !important;
+}
+.bar{
+    margin:10px auto;
+}
+
+.player img{
+    cursor: pointer;
+}
+.play img{
+    margin:0 20px;
+}
+.volume{
+    width:15%;
+}
+.volume img{
+    position: relative;
+    top:5px;
+}
+
+
+.volume{
+    width:40%;
+    cursor: pointer;
+    margin-left:15px;
+}
+
+.seekbar-background{
+    cursor: pointer;
+    margin-left:15px;
+    display: inline-block;
+    background-color:#5b6883;
+    height: 3px;
+    width:80%;
+    margin:4px 10px;
+    border-radius: 5px;
+}
+
+.volume-seekbar-background{
+    width: 55%;
+}
+
+#bar-control{
+    height: 100%;
+    background-color: white;
+    /* width:50%; */
+    z-index: 1;
+}
+
+#vol-bar-control{
+    height: 100%;
+    background-color: white;
+    /* width:50%; */
+    z-index: 1;
+}
+
+#currentTime, #duration, #vol-value{
+    display: inline-block;
+    width:30px;
+}
+.home-playlist{
+    z-index: 1;
+    top:100px;
+}

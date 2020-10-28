@@ -9,11 +9,9 @@ class Artist extends Component {
         }
     }
     componentDidMount() {
-        let id=this.props.match.params.post_id;
-        axios.get('http://localhost:8000/api/artist/'+id+'/')
+        let id=this.props.match.params.get_id;
+        axios.get('http://localhost:8000/api/artist/'+id)
             .then(res => {
-                console.log(res.data)
-                
                 this.setState({
                     data:res.data
                 })
@@ -28,14 +26,14 @@ class Artist extends Component {
          })
         return (
             <div className="records container">
-                 <div className="row" key={this.state.data.pk}>
+                 <div className="row" key={this.state.data.id}>
                         <div className="col s6 m5 l5" >
                             <img src={this.state.data.img_url}/>
                         </div>
                         <div className="content col s6 m6 l6">
                             <div className="title">Artist: {this.state.data.name}</div>
                             <div className="story">
-                                {this.state.data.dsc}
+                                {this.state.data.description}
                             </div>
                         </div>
                     </div>

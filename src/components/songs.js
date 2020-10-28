@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import { updateIndex } from '../action/update_i'
+import {updatePlaylist} from '../action/update_playlist'
 
 class Songs extends Component {
     state = {
@@ -21,16 +24,16 @@ class Songs extends Component {
         const list = items.length ? (
             items.map(item => {
                 return (
-                    <div className="col s12 m4 l4" key={item.pk}>
+                    <div className="col s12 m4 l4" key={item.id}>
                         <div className="card">
                             <div className="card-image">
-                                <img src={"http://localhost:8000" + item.fields.img_url} width="200px" height="300px" />   
+                                <img src={"http://localhost:8000" + item.img_url} width="200px" height="300px" />   
                             </div>
                             <div className="card-content">
-                            <span className="card-title">{item.fields.title}</span>{/* <span>{item.artist}</span> */}
+                            <span className="card-title"><Link to={"/Play/"+item.id}>{item.title}</Link></span>{/* <span>{item.artist}</span> */}
                             </div>
-                            <div className="card-action">
-                                <Link to={"/Play/"+item.pk}>Play</Link>
+                            <div className="card-action" style={{cursor:"pointer"}} onClick={()=>{this.props.updatePlaylist(item.id)}}>
+                                PLAY
                             </div>
                         </div>
                     </div>
@@ -50,4 +53,16 @@ class Songs extends Component {
         )
     }
 }
-export default Songs;
+const mapStateToProps=(state)=>{
+    return{
+        playlist:state.playlist
+    }
+}
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        updatePlaylist:(id)=>{
+            dispatch(updatePlaylist(id))
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Songs);
