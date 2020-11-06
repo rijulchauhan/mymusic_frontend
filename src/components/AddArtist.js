@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import upload from './../img/upload.png'
-class AddSong extends Component {
+class AddArtist extends Component {
     state={
         posterValid:false,
         fileValid:false,
@@ -49,7 +49,7 @@ class AddSong extends Component {
     }
     render() {
         return (
-            <div className="addsong row container">
+            <div className="addArtist row container">
                 <form onSubmit={(e)=>this.handleSubmit(e)}>
                     <div className="col s6 m6 l6 ">
                         <button type="submit"><img src={upload}/></button>
@@ -71,4 +71,4 @@ class AddSong extends Component {
         )
     }
 }
-export default AddSong;
+export default AddArtist;
