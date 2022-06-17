@@ -12,20 +12,17 @@ class Album extends Component {
         let id=this.props.match.params.post_id;
         axios.get('http://localhost:8000/api/album/'+id)
             .then(res => {
-                console.log(res.data)
-                
+                console.log(res.data)                
                 this.setState({
                     data:res.data
                 })
             })
     }
     render() {
-         const list=this.state.data.songs.map(l=>{
-             return(
+         const list=this.state.data.songs.map(l=>(
                  <li className="collection-item"><span>{l.title}</span><NavLink style={{float:"right"}} to={"/Play/"+l.id}>Play</NavLink></li>
-             )
-             
-         })
+             )             
+        )
         return (
             <div className="records container">
                  <div className="row" key={this.state.data.pk}>

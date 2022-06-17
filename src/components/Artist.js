@@ -20,12 +20,10 @@ class Artist extends Component {
             })
     }
     render() {
-         const list=this.state.data.songs.map(l=>{
-             return(
+         const list=this.state.data.songs.map(l=>(
                  <li className="collection-item"><span>{l.title}</span><NavLink style={{float:"right"}} to={"/Play/"+l.id}>Play</NavLink></li>
-             )
-             
-         })
+            )
+        )
         return (
             <div className="records container">
                  <div className="row" key={this.state.data.pk}>

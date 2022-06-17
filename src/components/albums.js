@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
-import {Link, NavLink} from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
-class Album extends Component{
+class Album extends Component {
     state = {
         Album: []
     }
@@ -15,30 +15,28 @@ class Album extends Component{
             })
     }
     render() {
-        
+
         const items = this.state.Album;
         console.log(items);
         const list = items.length ? (
-            items.map(item => {
-                return (
-                    <div className="item col s12 m5 l3" key={item.pk}>
-                    <img src={item.fields.img_url} width="250px"/><br/>
-                    <NavLink class="black-text" to={"/Album/"+item.pk}>{item.fields.name}</NavLink>
-                    </div>
-                )
-            })
+            items.map(item => (
+                <div className="item col s12 m5 l3" key={item.pk}>
+                    <img src={item.fields.img_url} width="250px" /><br />
+                    <NavLink class="black-text" to={"/Album/" + item.pk}>{item.fields.name}</NavLink>
+                </div>
+            )
+            )
         ) : (
-            
-                <p>
-                    No Album left
-                </p>
-            ); 
+            <p>
+                No Album left
+            </p>
+        );
         return (
             <div className="Artist container">
-                    <div className="row">
-                        {list}    
-                    </div>
-                    
+                <div className="row">
+                    {list}
+                </div>
+
             </div>
         )
     }

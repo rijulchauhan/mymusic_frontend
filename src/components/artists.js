@@ -19,14 +19,13 @@ class Artists extends Component{
         const items = this.state.artists;
         console.log(items);
         const list = items.length ? (
-            items.map(item => {
-                return (
+            items.map(item => (
                     <div className="item col s12 m5 l3" key={item.pk}>
                     <img src={item.fields.img_url} width="250px"/><br/>
                     <NavLink class="black-text" to={"/Artist/"+item.pk}>{item.fields.name}</NavLink>
                     </div>
                 )
-            })
+            )
         ) : (
             
                 <p>
